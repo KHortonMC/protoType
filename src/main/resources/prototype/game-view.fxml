@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="prototype.controllers.GameController">
+   <children>
+      <Group fx:id="group">
+         <children>
+            <Canvas fx:id="canvas" focusTraversable="true" height="798.0" onKeyPressed="#handleKeyPressed" onKeyReleased="#handleKeyReleased" width="797.0" />
+         </children>
+      </Group>
+      <HBox fx:id="bottomHBox" prefHeight="100.0" prefWidth="200.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding></HBox>
+      <HBox fx:id="topHBox" layoutX="10.0" layoutY="710.0" prefHeight="100.0" prefWidth="200.0" spacing="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         <children>
+            <Label fx:id="healthLabel" prefHeight="17.0" prefWidth="47.0" text="Health" />
+            <ProgressBar fx:id="healthBar" prefHeight="20.0" prefWidth="481.0" progress="0.0" />
+            <Label fx:id="debugLabel" prefHeight="76.0" prefWidth="249.0" text="Debug Info" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
