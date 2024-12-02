@@ -53,7 +53,8 @@ public class GameObject implements Bound {
 
     public void updateCollisionBounding() {
         collisionBounding.copy(bounding);
-        collisionBounding.inset(bounding.getHeight()*0.25);
+        collisionBounding.center();
+        collisionBounding.inset(bounding.getHeight()*0.10);
     }
 
     public void update(long time) {
@@ -83,6 +84,14 @@ public class GameObject implements Bound {
         }
 
         gc.restore();
+
+//        gc.setFill(Color.HOTPINK);
+//        gc.fillRect(collisionBounding.getX() - Camera.getX(), collisionBounding.getY() - Camera.getY(), collisionBounding.getWidth(), collisionBounding.getHeight());
+    }
+
+    public void takeHealing(long healing) {
+        currentHealth += healing;
+        if (currentHealth > maxHealth) currentHealth = maxHealth;
     }
 
     public void takeDamage(long damage) {

@@ -31,11 +31,15 @@ public class WeaponManager {
     public void setWeapon(Hardpoint weapon) {
         this.hardpoint.clearComponents();
         isEquipped = false;
-        weaponUI.setWeapon(null);
+        if (weaponUI != null) {
+            weaponUI.setWeapon(null);
+        }
 
         if (weapon != null) {
             this.hardpoint.addComponent(weapon);
-            weaponUI.setWeapon(weapon.getIconName());
+            if (weaponUI != null) {
+                weaponUI.setWeapon(weapon.getIconName());
+            }
             weapon.setTeam(team);
             isEquipped = true;
         }
@@ -44,7 +48,7 @@ public class WeaponManager {
     public void update(long now, GameObject owner) {
         hardpoint.update(now);
         hardpoint.reposition(owner);
-        if (hardpoint.getFirst() instanceof Launcher) {
+        if (weaponUI != null && hardpoint.getFirst() instanceof Launcher) {
             weaponUI.setAmmo(((Launcher)hardpoint.getFirst()).getAmmoPercent());
         }
     }

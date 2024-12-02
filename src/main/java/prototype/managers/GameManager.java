@@ -61,7 +61,7 @@ public class GameManager {
 
         Camera.update();
 
-        Main.setDebugText("Objects: " + objectsList.size() + " Parking: " + parkingList.size());
+        //Main.setDebugText("Objects: " + objectsList.size() + " Parking: " + parkingList.size());
     }
 
     public void parkResource(GameObject object) {

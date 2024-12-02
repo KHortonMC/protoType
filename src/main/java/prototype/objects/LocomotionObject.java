@@ -22,6 +22,7 @@ public class LocomotionObject extends GameObject {
         double oldY = bounding.getY();
 
         bounding.translate(deltaX, deltaY);
+        updateCollisionBounding();
 
         for (GameObject object : objectList) {
             if (this.collidesWith(object)) {
@@ -39,5 +40,6 @@ public class LocomotionObject extends GameObject {
     protected void handleCollision(GameObject object, double oldX, double oldY) {
         bounding.setX(oldX);
         bounding.setY(oldY);
+        updateCollisionBounding();
     }
 }

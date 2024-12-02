@@ -16,7 +16,7 @@ public class RocketLauncher extends Launcher {
     public RocketLauncher() {
         super();
         fireCooldown = new Cooldown(10,0);
-        reloadCooldown = new Cooldown(60,90);
+        reloadCooldown = new Cooldown(1,150);
         ammo = maxAmmo = 5;
         this.maxScatter = 40;
         this.iconName = "rocketlauncher";

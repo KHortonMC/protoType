@@ -13,4 +13,9 @@ public class Background extends GameObject {
         bounding.setY(Main.getCanvas().getHeight() / 2);
         this.isCollidable = false;
     }
+
+    @Override
+    public void updateCollisionBounding() {
+        // do nothing, it's a background
+    }
 }

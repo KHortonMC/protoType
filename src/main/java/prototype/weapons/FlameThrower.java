@@ -10,8 +10,8 @@ public class FlameThrower extends Launcher {
     public FlameThrower() {
         super();
         fireCooldown = new Cooldown(5,0);
-        reloadCooldown = new Cooldown(5,90);
-        ammo = maxAmmo = 30;
+        reloadCooldown = new Cooldown(1,40);
+        ammo = maxAmmo = 100;
         maxScatter = 10;
         this.iconName = "flamethrower";
         sprite = ImageManager.getImage(this.iconName);

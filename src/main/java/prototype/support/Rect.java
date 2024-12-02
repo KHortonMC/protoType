@@ -1,5 +1,7 @@
 package prototype.support;
 
+import prototype.Main;
+
 public class Rect {
     double x, y, width, height, rotation, scale;
 
@@ -69,6 +71,11 @@ public class Rect {
         this.scale = scale;
     }
 
+    public void center() {
+        x -= width * 0.5;
+        y -= height * 0.5;
+    }
+
     public void inset(double amount) {
         x += amount;
         y += amount;
@@ -97,6 +104,28 @@ public class Rect {
         double distX = x - other.x;
         double distY = y - other.y;
         return Math.sqrt(distX * distX + distY * distY);
+    }
+
+    private double normalizeAngle(double angle) {
+        while (angle > Math.PI) angle -= 2 * Math.PI;
+        while (angle < -Math.PI) angle += 2 * Math.PI;
+        return angle;
+    }
+
+    public double getRotationDist(Rect other) {
+        double targetAngle = Math.atan((other.y - this.y) / (other.x - this.x));
+        if (other.x < this.x) {
+            targetAngle += Math.PI;
+        }
+
+        targetAngle = normalizeAngle(targetAngle);
+        targetAngle = Math.toDegrees(targetAngle);
+
+        targetAngle += 90;
+
+        //Main.setDebugText("current angle: " + rotation + " target angle: " + targetAngle);
+
+        return rotation - targetAngle;
     }
 
     public enum Side {
