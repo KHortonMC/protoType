@@ -9,6 +9,7 @@ import prototype.support.Camera;
 import prototype.support.Rect;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class GameManager {
 
@@ -31,13 +32,25 @@ public class GameManager {
 
         GameObject.setObjectList(objectsList);
 
+        restart();
+    }
+
+    public void restart() {
+        objectsList.addAll(addList);
+        objectsList.addAll(removeList);
+        objectsList.addAll(parkingList);
+        for (GameObject object : objectsList) {
+            object.destruct();
+        }
+        objectsList.clear();
+        addList.clear();
+        removeList.clear();
+        parkingList.clear();
+
         buildScene();
     }
 
     private void buildScene() {
-        objectsList.clear();
-        addList.clear();
-
         objectsList.add(new Background());
 
         playerObject = new Player(new Rect(300,300,100,100));

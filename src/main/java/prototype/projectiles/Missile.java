@@ -15,7 +15,7 @@ public class Missile extends Projectile {
         bounding.setWidth(25);
         bounding.setHeight(25);
         lifespan = 100;
-        damage = 25;
+        damage = 100;
         deltaY = -3;
         deltaX = 0;
     }

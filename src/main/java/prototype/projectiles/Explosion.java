@@ -28,7 +28,7 @@ public class Explosion extends GameObject {
     public void setSize(double size) {
         bounding.setWidth(size);
         bounding.setHeight(size);
-        damage = (long)(size*0.25);
+        damage = (long)(size*0.5);
         time = 35;
     }
 

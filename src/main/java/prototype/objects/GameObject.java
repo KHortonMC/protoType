@@ -4,6 +4,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import prototype.managers.GameManager;
+import prototype.projectiles.Projectile;
 import prototype.support.Bound;
 import prototype.support.Camera;
 import prototype.support.Rect;
@@ -64,7 +65,8 @@ public class GameObject implements Bound {
     public boolean collidesWith(GameObject other) {
         if (this == other || other == null) return false;
         if (!this.isCollidable || !other.isCollidable) return false;
-        if (this.team == other.team) return false;
+        //if (this.team == other.team) return false;
+        if (other instanceof Projectile) return false;
         return this.collisionBounding.intersects(other.collisionBounding);
     }
 
@@ -114,4 +116,6 @@ public class GameObject implements Bound {
     protected void handleDestruction() {
         GameManager.getInstance().parkResource(this);
     }
+
+    public void destruct() {}
 }

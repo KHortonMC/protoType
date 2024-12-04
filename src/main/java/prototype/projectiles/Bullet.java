@@ -15,7 +15,7 @@ public class Bullet extends Projectile {
         bounding.setWidth(5);
         bounding.setHeight(30);
         lifespan = 80;
-        damage = 5;
+        damage = 15;
         deltaY = -7;
         deltaX = 0;
     }

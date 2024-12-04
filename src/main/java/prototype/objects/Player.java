@@ -16,7 +16,7 @@ public class Player extends Mecha {
     protected void initialize() {
         this.team = Team.PLAYER;
         super.initialize();
-        currentHealth = maxHealth = 200;
+        currentHealth = maxHealth = 600;
 
         animCooldown = new Cooldown(15,0);
         healCooldown = new Cooldown(5, 60);

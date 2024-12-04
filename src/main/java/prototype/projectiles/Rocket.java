@@ -16,7 +16,7 @@ public class Rocket extends Projectile {
         bounding.setWidth(12);
         bounding.setHeight(35);
         lifespan = 30;
-        damage = 10;
+        damage = 30;
         deltaY = -7;
         deltaX = 0;
     }

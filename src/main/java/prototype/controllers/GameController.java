@@ -8,6 +8,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
@@ -103,6 +104,10 @@ public class GameController {
         gameLoop.start();
     }
 
+    public void restart() {
+        GameManager.getInstance().restart();
+    }
+
     public void shutdown() {
         gameLoop.stop();
         gameManager.shutdown();
@@ -113,10 +118,14 @@ public class GameController {
     }
 
     public void handleKeyPressed(KeyEvent event) {
+        if (event.getCode() == KeyCode.ESCAPE) {
+            restart();
+        }
         playerController.handleKeyPressed(event);
     }
 
     public void handleKeyReleased(KeyEvent event) {
+
         playerController.handleKeyReleased(event);
     }
  }

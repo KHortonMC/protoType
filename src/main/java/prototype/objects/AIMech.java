@@ -31,7 +31,7 @@ public class AIMech extends Mecha {
 
         healthBar = new ProgressBar();
         healthBar.setProgress(getHealthPercent());
-        maxHealth = 100;
+        maxHealth = 400;
 
         Main.getRoot().getChildren().add(healthBar);
         reset();
@@ -45,7 +45,7 @@ public class AIMech extends Mecha {
     public void acquireTarget() {
         for (GameObject object : objectList) {
             if (object instanceof Player
-                && object.getBounding().getDist(this.bounding) < 800) {
+                && object.getBounding().getDist(this.bounding) < 600) {
                 targetObject = object;
             }
         }
@@ -107,5 +107,12 @@ public class AIMech extends Mecha {
     protected void handleDestruction() {
         super.handleDestruction();
         healthBar.setVisible(false);
+    }
+
+    @Override
+    public void destruct() {
+        super.destruct();
+        Main.getRoot().getChildren().remove(healthBar);
+        healthBar = null;
     }
 }
