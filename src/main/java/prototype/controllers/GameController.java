@@ -37,6 +37,8 @@ public class GameController {
     private GameManager gameManager;
     private PlayerController playerController;
 
+    WeaponUI[] weaponUIs = new WeaponUI[Player.MAX_WEAPONS];
+
     AnimationTimer gameLoop = new AnimationTimer() {
         @Override
         public void handle(long now) {
@@ -94,18 +96,21 @@ public class GameController {
             weaponUI.setIconView(iconView);
             weaponUI.setFrameView(iconFrame);
             weaponUI.setAmmoView(ammoFrame);
-
-            weaponUI.setWeapon(null);
-
             bottomHBox.getChildren().add(iconPane);
-            gameManager.getPlayerObject().getWeapon(i).setWeaponUI(weaponUI);
+            weaponUIs[i] = weaponUI;
         }
 
         gameLoop.start();
+        restart();
     }
 
     public void restart() {
         GameManager.getInstance().restart();
+
+        for (int i = 0; i < Player.MAX_WEAPONS; i++) {
+            weaponUIs[i].setWeapon(null);
+            gameManager.getPlayerObject().getWeapon(i).setWeaponUI(weaponUIs[i]);
+        }
     }
 
     public void shutdown() {

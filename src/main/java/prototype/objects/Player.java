@@ -19,6 +19,6 @@ public class Player extends Mecha {
         currentHealth = maxHealth = 600;
 
         animCooldown = new Cooldown(15,0);
-        healCooldown = new Cooldown(5, 60);
+        healCooldown = new Cooldown(1, 60);
     }
 }

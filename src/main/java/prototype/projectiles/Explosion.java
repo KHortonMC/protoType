@@ -14,6 +14,7 @@ import prototype.support.Rect;
 public class Explosion extends GameObject {
     long damage;
     long time = 10;
+    long damageTime = 20;
 
     public Explosion() {
         sprite = ImageManager.newSprite("explosion");
@@ -30,12 +31,24 @@ public class Explosion extends GameObject {
         bounding.setHeight(size);
         damage = (long)(size*0.5);
         time = 35;
+        damageTime = time/2;
     }
 
     @Override
     public void update(long now) {
         super.update(now);
         time -= 1;
+        if (time < damageTime) {
+            if (this.team != Team.NONE) {
+                for (GameObject o : objectList) {
+                    if ((o.getTeam() != this.team || this.team == Team.WORLD)
+                            && bounding.getDist(o.getBounding()) < (bounding.getWidth()*0.5)) {
+                        o.takeDamage(this.damage);
+                    }
+                }
+            }
+            damageTime = -1;
+        }
         if (time <= 0) {
             handleDestruction();
         }
@@ -44,13 +57,5 @@ public class Explosion extends GameObject {
     @Override
     public void handleDestruction() {
         super.handleDestruction();
-        if (this.team != Team.NONE) {
-            for (GameObject o : objectList) {
-                if ((o.getTeam() != this.team || this.team == Team.WORLD)
-                    && bounding.getDist(o.getBounding()) < (bounding.getWidth()*0.5)) {
-                    o.takeDamage(this.damage);
-                }
-            }
-        }
     }
 }

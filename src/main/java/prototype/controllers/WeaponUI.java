@@ -28,6 +28,7 @@ public class WeaponUI {
             icon.setImage(null);
             isSelected = false;
             isFilled = false;
+            setAmmo(0);
         }
         else {
             Image iconFile = ImageManager.getImage("icon"+type);
