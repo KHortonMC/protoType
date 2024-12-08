@@ -12,6 +12,7 @@ public class Rifle extends Launcher {
         fireCooldown = new Cooldown(15,0);
         reloadCooldown = new Cooldown(30,30);
         ammo = maxAmmo = 4;
+        maxScatter = 4;
         this.iconName = "rifle";
         sprite = ImageManager.getImage(this.iconName);
         this.bounding.setWidth(80);

@@ -1,5 +1,6 @@
 package prototype.objects;
 
+import prototype.managers.ImageManager;
 import prototype.support.Cooldown;
 import prototype.support.Rect;
 
@@ -16,6 +17,11 @@ public class Player extends Mecha {
     protected void initialize() {
         this.team = Team.PLAYER;
         super.initialize();
+
+        stand = ImageManager.getImage("playerstand");
+        walk1 = ImageManager.getImage("playerwalkl");
+        walk2 = ImageManager.getImage("playerwalkr");
+
         currentHealth = maxHealth = 600;
 
         animCooldown = new Cooldown(15,0);

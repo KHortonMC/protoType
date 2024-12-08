@@ -39,9 +39,6 @@ public class Mecha extends LocomotionObject {
     }
 
     protected void initialize() {
-        stand = ImageManager.getImage("playerstand");
-        walk1 = ImageManager.getImage("playerwalkl");
-        walk2 = ImageManager.getImage("playerwalkr");
         sprite = stand;
 
         this.isVisible = true;

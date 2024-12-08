@@ -1,6 +1,7 @@
 package prototype.weapons;
 
 import prototype.managers.GameManager;
+import prototype.managers.SoundManager;
 import prototype.objects.GameObject;
 import prototype.projectiles.Bullet;
 import prototype.projectiles.Projectile;
@@ -21,6 +22,7 @@ public class Launcher extends ArcMount {
         if (fireCooldown.trigger() && ammo > 0) {
             reloadCooldown.reset();
             fireOnce(owner);
+            SoundManager.getInstance().playSound(SoundManager.AudioCues.TockTock);
         }
     }
 

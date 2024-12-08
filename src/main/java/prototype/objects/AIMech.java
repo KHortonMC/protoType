@@ -3,6 +3,7 @@ package prototype.objects;
 import javafx.scene.control.ProgressBar;
 import prototype.Main;
 import prototype.managers.GameManager;
+import prototype.managers.ImageManager;
 import prototype.support.Camera;
 import prototype.support.Cooldown;
 import prototype.support.Rect;
@@ -28,6 +29,12 @@ public class AIMech extends Mecha {
 
         animCooldown = new Cooldown(15,0);
         healCooldown = new Cooldown(15,120);
+
+        String color = rand.nextInt(3) == 0 ? "red" : rand.nextInt(3) == 1 ? "green" : "blue";
+
+        stand = ImageManager.getImage("mech"+color+"s");
+        walk1 = ImageManager.getImage("mech"+color+"l");
+        walk2 = ImageManager.getImage("mech"+color+"r");
 
         healthBar = new ProgressBar();
         healthBar.setProgress(getHealthPercent());

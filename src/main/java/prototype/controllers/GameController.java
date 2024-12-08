@@ -15,6 +15,7 @@ import javafx.scene.layout.StackPane;
 import prototype.managers.GameManager;
 import javafx.scene.Group;
 import prototype.Main;
+import prototype.managers.SoundManager;
 import prototype.objects.Player;
 
 public class GameController {

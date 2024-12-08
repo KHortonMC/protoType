@@ -1,6 +1,7 @@
 module edu.miracosta.cs112.prototype {
     requires javafx.controls;
     requires javafx.fxml;
+    requires javafx.media;
     requires java.desktop;
 
 

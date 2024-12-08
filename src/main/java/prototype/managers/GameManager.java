@@ -31,6 +31,7 @@ public class GameManager {
         parkingList = new ArrayList<>();
 
         GameObject.setObjectList(objectsList);
+        SoundManager.initialize();
 
         restart();
     }
@@ -51,7 +52,7 @@ public class GameManager {
     }
 
     private void buildScene() {
-        objectsList.add(new Background());
+        GameScene.tileBackground(objectsList);
 
         playerObject = new Player(new Rect(300,300,100,100));
         Camera.setPlayer(playerObject);
