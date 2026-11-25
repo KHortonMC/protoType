@@ -1,5 +1,5 @@
 package prototype.support;
 
-public interface Bound {
+public interface IBound {
     public Rect getBounding();
 }

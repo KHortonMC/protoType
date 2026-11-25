@@ -5,14 +5,14 @@ import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import prototype.managers.GameManager;
 import prototype.projectiles.Projectile;
-import prototype.support.Bound;
+import prototype.support.IBound;
 import prototype.support.Camera;
 import prototype.support.Rect;
 
 import java.util.ArrayList;
 import java.util.Random;
 
-public class GameObject implements Bound {
+public class GameObject implements IBound {
     static protected ArrayList<GameObject> objectList = null;
     public static void setObjectList(ArrayList<GameObject> objectList) { GameObject.objectList = objectList; }
 

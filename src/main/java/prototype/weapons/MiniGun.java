@@ -5,9 +5,7 @@ import prototype.managers.GameManager;
 import prototype.managers.ImageManager;
 import prototype.projectiles.Bullet;
 import prototype.projectiles.Projectile;
-import prototype.support.Bound;
 import prototype.support.Cooldown;
-import prototype.support.Rect;
 
 public class MiniGun extends Launcher {
 

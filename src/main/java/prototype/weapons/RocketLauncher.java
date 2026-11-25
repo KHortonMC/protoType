@@ -2,15 +2,9 @@ package prototype.weapons;
 
 import prototype.managers.GameManager;
 import prototype.managers.ImageManager;
-import prototype.objects.GameObject;
-import prototype.projectiles.Missile;
 import prototype.projectiles.Projectile;
 import prototype.projectiles.Rocket;
-import prototype.support.Bound;
 import prototype.support.Cooldown;
-import prototype.support.Rect;
-
-import java.util.ArrayList;
 
 public class RocketLauncher extends Launcher {
     public RocketLauncher() {

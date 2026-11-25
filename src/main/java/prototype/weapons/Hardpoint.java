@@ -1,10 +1,9 @@
 package prototype.weapons;
 
 import prototype.objects.GameObject;
-import prototype.support.Bound;
+import prototype.support.IBound;
 import prototype.support.Rect;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Hardpoint extends GameObject {
@@ -54,7 +53,7 @@ public class Hardpoint extends GameObject {
         }
     }
 
-    public void reposition(Bound owner) {
+    public void reposition(IBound owner) {
         this.bounding.setX(owner.getBounding().getX());
         this.bounding.setY(owner.getBounding().getY());
         this.bounding.setRotation(owner.getBounding().getRotation());

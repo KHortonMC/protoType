@@ -1,6 +1,6 @@
 package prototype.weapons;
 
-import prototype.support.Bound;
+import prototype.support.IBound;
 
 public class ArcMount extends Hardpoint {
     double maxArc = 0;
@@ -12,7 +12,7 @@ public class ArcMount extends Hardpoint {
         this.maxArc = arc;
     }
 
-    public void reposition(Bound owner) {
+    public void reposition(IBound owner) {
         this.bounding.setX(owner.getBounding().getX());
         this.bounding.setY(owner.getBounding().getY());
         this.bounding.setRotation(owner.getBounding().getRotation());
